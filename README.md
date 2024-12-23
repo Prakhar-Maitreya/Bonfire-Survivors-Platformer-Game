@@ -18,9 +18,9 @@
 - 4 more enemy types (a total of 5)
 - A boss fight
 - 3 more stages
+- A menu and UI
 
 
 ## Usage
-Currently the repository consists of pure code that requires the Godot Engine to compile it
-An executable file is planned to release when the full game is out."# Bonfire-Survivors-Platformer-Game" 
-"# Bonfire-Survivors-Platformer-Game" 
+Currently the repository consists of pure code that requires the Godot Engine to compile it.
+An executable file is planned to release when the full game is out.
