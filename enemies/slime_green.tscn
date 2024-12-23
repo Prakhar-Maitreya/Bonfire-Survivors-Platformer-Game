@@ -1,0 +1,98 @@
+[gd_scene load_steps=14 format=3 uid="uid://c21u1l8fnyhrj"]
+
+[ext_resource type="Script" path="res://enemies/slime_green.gd" id="1_cg0gq"]
+[ext_resource type="Texture2D" uid="uid://qmp1fbaa2415" path="res://Resources/brackeys_platformer_assets/sprites/slime_green.png" id="1_hre12"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jl2c4"]
+atlas = ExtResource("1_hre12")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4wc3"]
+atlas = ExtResource("1_hre12")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ulf6"]
+atlas = ExtResource("1_hre12")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uutfj"]
+atlas = ExtResource("1_hre12")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s732s"]
+atlas = ExtResource("1_hre12")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28dt8"]
+atlas = ExtResource("1_hre12")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhagh"]
+atlas = ExtResource("1_hre12")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysqo3"]
+atlas = ExtResource("1_hre12")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wmav3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jl2c4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4wc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ulf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uutfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s732s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28dt8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhagh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysqo3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u6i5n"]
+radius = 128.845
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_swmn2"]
+size = Vector2(14, 12)
+
+[node name="slimeGreen" type="CharacterBody2D"]
+script = ExtResource("1_cg0gq")
+speed = 100
+
+[node name="sprites" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_wmav3")
+animation = &"idle"
+frame = 4
+frame_progress = 0.399206
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="detectionArea" type="CollisionShape2D" parent="Range"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_u6i5n")
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_swmn2")
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
