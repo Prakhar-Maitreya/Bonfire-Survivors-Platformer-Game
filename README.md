@@ -7,7 +7,7 @@
 - A player character
 - Enemies - (slimes)
 - Player movement and Enemy movement animations
-- Coins (not collectable yet
+- Coins (not collectable yet)
 - A finite single stage
 
 ## Features planned to be implemented
