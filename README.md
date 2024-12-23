@@ -24,3 +24,6 @@
 ## Usage
 Currently the repository consists of pure code that requires the Godot Engine to compile it.
 An executable file is planned to release when the full game is out.
+
+## Assests
+- Temporary visual assests from https://github.com/brackeys
